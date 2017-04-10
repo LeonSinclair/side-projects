@@ -46,12 +46,10 @@ public class Solver {
 		
 		for(int i = 0; i < 9; i++)
 		{
+			//print out the test values
 			System.out.println(Arrays.toString(grid[i]));
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		System.out.println(\n \n \n); //clear out the console
 		
 		backtrack(grid);
 		for(int i = 0; i < 9; i++)
