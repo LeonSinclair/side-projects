@@ -54,7 +54,7 @@ public class SenLen
             while (it.hasNext()) 
             {
                 Map.Entry pair = (Map.Entry)it.next();
-                int value = (Integer)pair.getValue();
+                int value = (int) pair.getValue();
                 if(value > max)
                 {
                     max = value;
