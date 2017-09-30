@@ -27,13 +27,14 @@ public class SenLen
                 if(word.contains(".") || word.contains("!") || word.contains("?"))
                 {
                     sentences++;
-                    addToHashMapIntInt(sentencesMap,currentSentenceLength);
+                    addtoMapIntInt(sentencesMap, currentSentenceLength);
                     currentSentenceLength = 0;
                 }
                 word = word.toLowerCase();
                 word = word.replaceAll("[^a-zA-Z]", "");
-                addToHashMapStrInt(occurenceMap, word);
+                addtoMapStrInt(occurenceMap, word);
                 wordSum++;
+                currentSentenceLength++;
             }
             //prevents divide by zero error
             //0 sentences doesn't really make sense so we make so there are at least 1
@@ -57,7 +58,7 @@ public class SenLen
                 it.remove(); // avoids a ConcurrentModificationException
             }
             System.out.println("The most common word in the text is \"" + key + "\" with " + max + " occurences.");
-            
+            System.out.println("The modal sentence length is: " + highestMapKeyIntInt(sentencesMap));
         }
         catch(FileNotFoundException e)
         {
@@ -69,7 +70,7 @@ public class SenLen
         
 
     }
-    public static void addToHashMapIntInt(Map map, int key )
+    public static void addtoMapIntInt(Map map, int key )
     {
         int count;
         if(map.containsKey(key))
@@ -83,7 +84,8 @@ public class SenLen
         }
         map.put(key, count);
     }
-    public static void addToHashMapStrInt(Map map, String key )
+    
+    public static void addtoMapStrInt(Map map, String key )
     {
         int count;
         if(map.containsKey(key))
@@ -96,5 +98,24 @@ public class SenLen
             count = 1;
         }
         map.put(key, count);
+    }
+
+    public static int highestMapKeyIntInt(Map map)
+    {
+        int max = Integer.MIN_VALUE;
+        int key = 0;
+        Iterator it = map.entrySet().iterator();
+        while(it.hasNext())
+        {
+            Map.Entry pair = (Map.Entry)it.next();
+            int value = (int) pair.getValue();
+            if(value > max)
+            {
+                max = value;
+                key = (int) pair.getKey();
+            }
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+        return key;
     }
 }
