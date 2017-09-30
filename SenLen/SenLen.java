@@ -7,6 +7,7 @@ public class SenLen
     {
         String fileName;
         HashMap<String, Integer> occurenceMap = new HashMap<String, Integer>();
+        HashMap<Integer, Integer> sentencesMap = new HashMap<Integer, Integer>();
         int sentences = 0;
         int wordSum = 0;
         if(args.length > 0) fileName = args[0];
@@ -19,26 +20,19 @@ public class SenLen
         try
         {
             Scanner inputFile = new Scanner(new FileReader(fileName));
+            int currentSentenceLength = 0;
             while(inputFile.hasNext())
             {
                 String word = inputFile.next();
                 if(word.contains(".") || word.contains("!") || word.contains("?"))
                 {
                     sentences++;
+                    addToHashMapIntInt(sentencesMap,currentSentenceLength);
+                    currentSentenceLength = 0;
                 }
                 word = word.toLowerCase();
                 word = word.replaceAll("[^a-zA-Z]", "");
-                int count;
-                if(occurenceMap.containsKey(word))
-                {
-                    count = occurenceMap.get(word);
-                    count++;
-                }
-                else
-                {
-                    count = 1;
-                }
-                occurenceMap.put(word, count);
+                addToHashMapStrInt(occurenceMap, word);
                 wordSum++;
             }
             //prevents divide by zero error
@@ -70,7 +64,37 @@ public class SenLen
             System.out.println("Error: Specified File Not Found.");
             System.exit(1);
         }
+
+        
         
 
+    }
+    public static void addToHashMapIntInt(Map map, int key )
+    {
+        int count;
+        if(map.containsKey(key))
+        {
+            count = (Integer) map.get(key);
+            count++;
+        }
+        else
+        {
+            count = 1;
+        }
+        map.put(key, count);
+    }
+    public static void addToHashMapStrInt(Map map, String key )
+    {
+        int count;
+        if(map.containsKey(key))
+        {
+            count = (Integer) map.get(key);
+            count++;
+        }
+        else
+        {
+            count = 1;
+        }
+        map.put(key, count);
     }
 }
