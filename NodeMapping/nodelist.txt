@@ -1,0 +1,52 @@
+Node List Acronyms
+San Francisco,SFC,0,0,255
+Chicago,CHG,0,0,255
+Montreal,MTL,0,0,255
+New York,NYK- 0,0,255
+Atlanta,ATL,0,0,255
+Washington,WSH,0,0,255
+Madrid,MAD,0,0,255
+London,LON,0,0,255
+Paris,PAR,0,0,255
+Essen,ESN,0,0,255
+St Petersburg,STP,0,0,255
+Milan,MLN,0,0,255
+
+Los Angeles,LAS,255,255,0
+Mexico City,MEX,255,255,0
+Miami,MIA,255,255,0
+Bogota,BOG,255,255,0
+Lima,LIM,255,255,0
+Santiago,SAN,255,255,0
+Buenos Aires,BUE,255,255,0
+Sao Paulo,SAO,255,255,0
+Lagos,LAG,255,255,0
+Khartoum,KHA,255,255,0
+Kinshasa,KIN,255,255,0
+Johannesburg,JOH,255,255,0
+
+Algiers,ALG,255,255,255
+Istanbul,IST,255,255,255
+Moscow,MOS,255,255,255
+Cairo,CAI,255,255,255
+Baghdad,BAG,255,255,255
+Riyadh,RIY,255,255,255
+Tehran,TEH,255,255,255
+Karachi,KAR,255,255,255
+Mumbai,MUM,255,255,255
+Delhi,DEL,255,255,255
+Chennai,CHE,255,255,255
+Kolkata,KOL,255,255,255
+
+Bangkok,BAN,255,0,0
+Shanghai,SHA,255,0,0
+Jakarta,JAK,255,0,0
+Hong Kong,HON,255,0,0
+Ho Chi Minh City,HCM,255,0,0
+Seoul,SOL,255,0,0
+Tokyo,TOK,255,0,0
+Taipei,TAI,255,0,0
+Osaka,OSA,255,0,0
+Beijing,BEI,255,0,0
+Manila,MAN,255,0,0
+Sydney,SYD,255,0,0
